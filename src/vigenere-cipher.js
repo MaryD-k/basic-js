@@ -26,10 +26,10 @@ class VigenereCipheringMachine {
   }
 
   encrypt(message, key) {
-    let newMessage=message.toUpperCase();
     let editKey='';
     let newKey = '';
-    if (message == null || key == null || message == 'undefined') throw new Error;
+    if (message == null || key == null || message == 'undefined') throw new Error ('Message is null');
+    let newMessage=message.toUpperCase();
     if (message.length > key.length)
     {
       let keyLength = Math.trunc(newMessage.length/key.length);
@@ -58,10 +58,10 @@ class VigenereCipheringMachine {
   
   decrypt(encryptedMessage, key) {
     let decrStr = '';
-    let newMessage=encryptedMessage.toUpperCase();
     let editKey='';
     let newKey = '';
-
+    if (encryptedMessage == null || key == null || encryptedMessage == 'undefined') throw new Error ('encryptedMessage is null');
+    let newMessage=encryptedMessage.toUpperCase();
     if (encryptedMessage.length > key.length)
     {
       let keyLength = Math.trunc(newMessage.length/key.length);
