@@ -21,7 +21,7 @@ function tableRecta(indexWord, indexKey, type){
 
 class VigenereCipheringMachine {
 
-  constructor(acceptValue = true) {
+  constructor(acceptValue) {
     this.type = acceptValue;
   }
 
@@ -29,6 +29,7 @@ class VigenereCipheringMachine {
     let newMessage=message.toUpperCase();
     let editKey='';
     let newKey = '';
+    if (message == null || key == null || message == 'undefined') throw new Error;
     if (message.length > key.length)
     {
       let keyLength = Math.trunc(newMessage.length/key.length);
