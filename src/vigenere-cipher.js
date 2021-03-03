@@ -21,8 +21,8 @@ function tableRecta(indexWord, indexKey, type){
 
 class VigenereCipheringMachine {
 
-  constructor(acceptValue) {
-    if (acceptValue === false ) this.type = 'reverse';
+  constructor(acceptValue = true) {
+    this.type = acceptValue;
   }
 
   encrypt(message, key) {
@@ -51,7 +51,7 @@ class VigenereCipheringMachine {
         str = str + newMessage[i];
       }
     }
-    if (this.type === 'reverse') return str.split("").reverse().join("");
+    if (this.type === false) return str.split("").reverse().join("");
     return str;
   }
   
@@ -87,7 +87,7 @@ class VigenereCipheringMachine {
         else  decrStr = decrStr + newMessage[i];
       }
     }
-    if (this.type === 'reverse') return decrStr.split("").reverse().join("");
+    if (this.type === false) return decrStr.split("").reverse().join("");
     return decrStr;
   }
 }
